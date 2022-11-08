@@ -1,6 +1,25 @@
 const bcrypt = require("bcrypt");
+const { application } = require("express");
 const User = require("../model/userSchema");
 const userSchema = require('../model/userSchema')
+const {transporter,mailOption} = require("../service/mailService")
+
+const sendMail = async (req,resp) => {
+    try {
+    transporter.sendMail(mailOption,(error,info)=> {
+       console.log("ncjbchjsbchjsbcjk")
+        if(error){
+            console.log(error);
+        }
+        else{
+            console.log("Email Sent Succesfully" + info.response);
+            return resp.send("Email Sent Succesfully" + info.response);
+        }
+    })
+} catch (error) {
+    res.send("Error" + err)
+}
+}
 
 
 
@@ -43,6 +62,7 @@ const userSignup = async (req, res) => {
     const salt = await bcrypt.getsalt
 }
 
-module.exports = {
-    userSignup,
-}
+ module.exports = {
+     sendMail,
+     userSignup
+ }

@@ -6,6 +6,12 @@ const userSchema = require('./model/userSchema');
 const User=require('./model/userSchema');
 const bcrypt =require("bcrypt")
 const router = require('./routes/userRoutes')
+const cron =  require('node-cron')
+
+// cron.schedule("*./3 * * * * *",function(){
+//     console.log("running in every 10 second")
+// })
+
 
 // parse application/json
 app.use(bodyParser.json())
