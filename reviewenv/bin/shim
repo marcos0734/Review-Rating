@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+export NODE_PATH='/home/gaurav/Documents/workspace/Review_Rating/reviewenv/lib/node_modules'
+export NPM_CONFIG_PREFIX='/home/gaurav/Documents/workspace/Review_Rating/reviewenv'
+export npm_config_prefix='/home/gaurav/Documents/workspace/Review_Rating/reviewenv'
+exec 'reviewenv/bin/node' "$@"
